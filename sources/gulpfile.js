@@ -13,7 +13,6 @@ gulp.task('sass', function () {
   return gulp
     .src(['sass/**/*.scss', '../*/*.scss'])
     // Initiate sourcemaps
-    .pipe($.sourcemaps.init())
     // Convert sass into css
     .pipe($.sass({
       // sourcemap: true,
@@ -29,8 +28,6 @@ gulp.task('sass', function () {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions']
     }))
-    // Write out source maps
-    .pipe($.sourcemaps.write())
     // Save the CSS
     .pipe(gulp.dest('../assets/stylesheets'))
     // .pipe($.livereload());
