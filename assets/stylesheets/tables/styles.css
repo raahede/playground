@@ -1,0 +1,53 @@
+.compare {
+  border: 1px solid #ddd;
+  margin: 1em;
+}
+
+.compare thead {
+  background: #ddd;
+}
+
+.compare tr:nth-child(even) {
+  background: #eee;
+}
+
+.compare th, .compare td {
+  padding: 0.5em;
+}
+
+.compare th {
+  text-align: left;
+}
+
+.compare tbody th {
+  font-size: 0.8em;
+}
+
+@media (max-width: 479px) {
+  .compare thead {
+    display: none;
+  }
+  .compare tr:nth-child(even) {
+    background: none;
+  }
+  .compare td, .compare th {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    overflow: auto;
+    text-align: right;
+    float: left\9;
+    width: 100%\9;
+  }
+  .compare th {
+    background: #ddd;
+    font-weight: bold;
+    text-align: left;
+  }
+  .compare td:before {
+    content: attr(title);
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+}

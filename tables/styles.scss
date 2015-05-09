@@ -1,0 +1,54 @@
+
+.compare {
+  border: 1px solid #ddd;
+  margin: 1em;
+
+  thead {
+    background: #ddd;
+  }
+
+  tr:nth-child(even) { background: #eee; }
+
+  th, td {
+    padding: 0.5em;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  tbody th {
+    font-size: 0.8em;
+  }
+
+  @media (max-width: 479px) {
+    thead { display: none; }
+
+    tr:nth-child(even) { background: none; }
+
+    td, th {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      overflow: auto; // avoid collapsing table cells when empty
+      text-align: right;
+
+      // Fix IE9
+      float: left\9;
+      width: 100%\9;
+    }
+
+    th {
+      background: #ddd;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    td:before {
+      content: attr(title);
+      display: inline-block;
+      float: left;
+      font-weight: bold;
+      margin-right: 0.5em;
+    }
+  }
+}
