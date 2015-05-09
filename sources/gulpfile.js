@@ -63,7 +63,7 @@ gulp.task('watch', function() {
   // $.livereload.listen({
   //   port: 8000
   // });
-  gulp.watch('sass/**/*.scss', ['sass'])
+  gulp.watch(['sass/**/*.scss', '../*/*.scss'], ['sass'])
 });
 
 gulp.task('default', ['sass']);

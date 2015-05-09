@@ -1,6 +1,10 @@
 
 .breadcrumb {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-left: none;
   display: table;
+  margin: 10px;
 
   &__list-sizer {
     display: table-cell;
@@ -14,34 +18,54 @@
   }
 
   &__list {
+    display: table;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: table;
     width: 100%;
   }
 
   &__item {
     display: table-cell;
     vertical-align: top;
-    padding: 4px;
   }
 
   &__link {
+    border-left: 1px solid #ccc;
     display: block;
     height: 1em;
+    padding: 4px;
 
-    .breadcrumb__list & {
-      position: relative;
+    &:hover { background: #fff; }
+  }
+
+  &__list-link {
+    @extend .breadcrumb__link;
+    position: relative;
+
+    &:before {
+      @extend .breadcrumb__link;
+      border: none;
+      content: attr(title);
+      display: inline-block;
+      overflow: hidden;
+      position: absolute;
+        left: 0;
+        top: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &:hover {
+      z-index: 2;
 
       &:before {
-        content: attr(title);
-        display: inline-block;
-        position: absolute;
-        width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        background: #fff;
+        border-right: 1px solid #ccc;
+        overflow: visible;
+        width: auto;
       }
     }
   }
