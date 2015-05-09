@@ -1,0 +1,56 @@
+
+.breadcrumb {
+  display: table;
+
+  &__list-sizer {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  &__item--root,
+  &__item--current {
+    @extend .breadcrumb__item;
+    white-space: nowrap;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: table;
+    width: 100%;
+  }
+
+  &__item {
+    display: table-cell;
+    vertical-align: top;
+    padding: 4px;
+  }
+
+  &__link {
+    display: block;
+    height: 1em;
+
+    .breadcrumb__list & {
+      position: relative;
+
+      &:before {
+        content: attr(title);
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+
+    .breadcrumb__list & {
+      visibility: hidden;
+    }
+  }
+}
