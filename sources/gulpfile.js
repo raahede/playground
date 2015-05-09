@@ -11,7 +11,7 @@ var $ = require('gulp-load-plugins')();
 
 gulp.task('sass', function () {
   return gulp
-    .src('sass/**/*.scss')
+    .src(['sass/**/*.scss', '../*/*.scss'])
     // Initiate sourcemaps
     .pipe($.sourcemaps.init())
     // Convert sass into css
