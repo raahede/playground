@@ -1,7 +1,10 @@
+$breadcrumb-background-color: #eee;
+$breadcrumb-background-hover-color: #fff;
+$breadcrumb-border-color: #ccc;
 
 .breadcrumb {
-  background: #eee;
-  border: 1px solid #ccc;
+  background: $breadcrumb-background-color;
+  border: 1px solid $breadcrumb-border-color;
   border-right: none;
   display: table;
   margin: 10px;
@@ -31,7 +34,7 @@
   }
 
   &__text {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid $breadcrumb-border-color;
     box-sizing: border-box;
     display: block;
     height: 24px;
@@ -40,7 +43,7 @@
 
   &__link {
     @extend .breadcrumb__text;
-    &:hover { background: #fff; }
+    &:hover { background: $breadcrumb-background-hover-color; }
   }
 
   &__list-link {
@@ -74,8 +77,8 @@
       z-index: 2;
 
       &:before {
-        background: #fff;
-        border-right: 1px solid #ccc;
+        background: $breadcrumb-background-hover-color;
+        border-right: 1px solid $breadcrumb-border-color;
         content: attr(title);
         overflow: visible;
         width: auto;
