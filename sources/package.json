@@ -1,0 +1,19 @@
+{
+  "name": "Raahede's playground",
+  "version": "0.0.1",
+  "description": "Raahede's playground build settings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frej Raahede Nielsen",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "gulp": "~3.8.11",
+    "gulp-autoprefixer": "~2.1.0",
+    "gulp-load-plugins": "~0.8.0",
+    "gulp-sass": "~2.0.0",
+    "gulp-sourcemaps": "~1.5.1",
+    "gulp-watch": "~4.2.0"
+  }
+}
