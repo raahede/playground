@@ -30,13 +30,16 @@
     vertical-align: top;
   }
 
-  &__link {
+  &__text {
     border-right: 1px solid #ccc;
     box-sizing: border-box;
     display: block;
     height: 24px;
     padding: 4px;
+  }
 
+  &__link {
+    @extend .breadcrumb__text;
     &:hover { background: #fff; }
   }
 
@@ -54,6 +57,7 @@
       position: absolute;
         left: 0;
         top: 0;
+      text-decoration: inherit;
       text-overflow: ellipsis;
       white-space: nowrap;
       width: 100%;
@@ -88,8 +92,6 @@
       &:after { display: none; }
     }
   }
-
-  &__text { display: inline-block; }
 
   &__list-text {
     display: none;
