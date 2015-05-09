@@ -1,10 +1,7 @@
-$breadcrumb-background-color: #eee;
-$breadcrumb-background-hover-color: #fff;
-$breadcrumb-border-color: #ccc;
 
 .breadcrumb {
-  background: $breadcrumb-background-color;
-  border: 1px solid $breadcrumb-border-color;
+  background: #eee;
+  border: 1px solid #ccc;
   border-right: none;
   display: table;
   margin: 10px;
@@ -34,7 +31,7 @@ $breadcrumb-border-color: #ccc;
   }
 
   &__text {
-    border-right: 1px solid $breadcrumb-border-color;
+    border-right: 1px solid #ccc;
     box-sizing: border-box;
     display: block;
     height: 24px;
@@ -43,7 +40,7 @@ $breadcrumb-border-color: #ccc;
 
   &__link {
     @extend .breadcrumb__text;
-    &:hover { background: $breadcrumb-background-hover-color; }
+    &:hover { background: #fff; }
   }
 
   &__list-link {
@@ -77,8 +74,8 @@ $breadcrumb-border-color: #ccc;
       z-index: 2;
 
       &:before {
-        background: $breadcrumb-background-hover-color;
-        border-right: 1px solid $breadcrumb-border-color;
+        background: #fff;
+        border-right: 1px solid #ccc;
         content: attr(title);
         overflow: visible;
         width: auto;
