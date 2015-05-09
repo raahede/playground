@@ -17,6 +17,33 @@ gulp.task('sass', function () {
     // Convert sass into css
     .pipe($.sass({
       // sourcemap: true,
+      outputStyle: 'expanded',
+      errLogToConsole: true
+    }))
+    // Catch any SCSS errors and prevent them from crashing gulp
+    .on('error', function (error) {
+        console.error(error);
+        this.emit('end');
+    })
+    // Prefix CSS3 properties for browsersupport
+    .pipe($.autoprefixer({
+      browsers: ['last 2 versions']
+    }))
+    // Write out source maps
+    .pipe($.sourcemaps.write())
+    // Save the CSS
+    .pipe(gulp.dest('../assets/stylesheets'))
+    // .pipe($.livereload());
+});
+
+gulp.task('sass-debug', function () {
+  return gulp
+    .src(['sass/**/*.scss', '../*/*.scss'])
+    // Initiate sourcemaps
+    .pipe($.sourcemaps.init())
+    // Convert sass into css
+    .pipe($.sass({
+      // sourcemap: true,
       errLogToConsole: true
     }))
     // Catch any SCSS errors and prevent them from crashing gulp
@@ -40,8 +67,7 @@ gulp.task('sass-production', function () {
     .src('sass/**/*.scss')
     .pipe($.sass({
       outputStyle: 'compressed',
-      errLogToConsole: true,
-      includePaths: ['node_modules/susy/sass']
+      errLogToConsole: true
     }))
     // Catch any SCSS errors and prevent them from crashing gulp
     .on('error', function (error) {
