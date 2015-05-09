@@ -3,8 +3,6 @@
 // Include dependencies
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-// Fetch import settings
-var jsImports = require('./javascripts/gulp-imports');
 
 // -------------------------------------------
 // Sass tasks
@@ -67,3 +65,5 @@ gulp.task('watch', function() {
   // });
   gulp.watch('sass/**/*.scss', ['sass'])
 });
+
+gulp.task('default', ['sass']);
