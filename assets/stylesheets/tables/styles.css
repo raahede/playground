@@ -16,7 +16,16 @@
 }
 
 .table--compare caption, .table--compare th, .table--compare td {
-  padding: 0.5em;
+  padding: 10px 14px;
+}
+
+.table--compare th:first-child,
+.table--compare td:first-child {
+  border-right: 1px solid #ddd;
+}
+
+.table--compare thead th:first-child {
+  border-color: #ccc;
 }
 
 .table--compare th {
