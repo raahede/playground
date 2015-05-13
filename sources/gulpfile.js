@@ -30,7 +30,6 @@ gulp.task('sass', function () {
     }))
     // Save the CSS
     .pipe(gulp.dest('../assets/stylesheets'))
-    // .pipe($.livereload());
 });
 
 gulp.task('sass-debug', function () {
@@ -56,7 +55,6 @@ gulp.task('sass-debug', function () {
     .pipe($.sourcemaps.write())
     // Save the CSS
     .pipe(gulp.dest('../assets/stylesheets'))
-    // .pipe($.livereload());
 });
 
 gulp.task('sass-production', function () {
@@ -83,9 +81,7 @@ gulp.task('sass-production', function () {
 
 // Watch Files For Changes & Reload
 gulp.task('watch', function() {
-  // $.livereload.listen({
-  //   port: 8000
-  // });
+  gulp.start(['sass'])
   gulp.watch(['sass/**/*.scss', '../*/*.scss'], ['sass'])
 });
 
