@@ -21,9 +21,13 @@
   </head>
   <body>
 
+  <h1>Responsive tables</h1>
+  <p>These tables are 100% responsive without the use of Javascript.</p>
+  <p>Check out the <a href="js-polyfill.html">Javascript polyfill</a> that gives a bit more flexibility in use.</p>
 
   <div class="table--mount-column">
     <table>
+      <caption>Without Javascript, this table has a forced cell height on mobile to make sure the mounted cells have the correct height.</caption>
       <thead>
         <tr>
           <th>Date</th>
@@ -208,6 +212,7 @@
 
 
   <table class="table--compare">
+    <caption>Without Javascript, it is necessary to set a title attribute on cells.</caption>
     <thead>
       <tr>
         <th></th>
