@@ -9,7 +9,14 @@
 
   tr:nth-child(even) { background: #eee; }
 
-  caption, th, td { padding: 0.5em; }
+  caption, th, td { padding: 10px 14px; }
+
+  th:first-child,
+  td:first-child {
+    border-right: 1px solid #ddd;
+  }
+
+  thead th:first-child { border-color: #ccc; }
 
   th { text-align: left; }
 
