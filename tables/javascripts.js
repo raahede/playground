@@ -11,6 +11,7 @@ TableMountColumn.prototype = {
   addEventListeners : function() {
     $(window).on('redraw', $.proxy(this.onWindowUpdate, this));
     $(window).on('resize', $.proxy(this.onWindowUpdate, this));
+    $(window).on('load', $.proxy(this.onWindowUpdate, this));
   },
 
   onWindowUpdate : function() {
