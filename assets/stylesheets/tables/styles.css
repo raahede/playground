@@ -1,6 +1,10 @@
 .table--compare {
   border: 1px solid #ddd;
-  margin: 1em;
+  margin-bottom: 1em;
+}
+
+.table--compare caption {
+  border: inherit;
 }
 
 .table--compare thead {
@@ -11,7 +15,7 @@
   background: #eee;
 }
 
-.table--compare th, .table--compare td {
+.table--compare caption, .table--compare th, .table--compare td {
   padding: 0.5em;
 }
 
@@ -53,13 +57,17 @@
 }
 
 .table--mount-column {
-  margin: 1em;
+  margin-bottom: 1em;
   overflow: auto;
   border: 1px solid #ddd;
 }
 
 .table--mount-column table {
   width: 100%;
+}
+
+.table--mount-column caption {
+  border: inherit;
 }
 
 .table--mount-column thead {
@@ -70,7 +78,7 @@
   background: #eee;
 }
 
-.table--mount-column th, .table--mount-column td {
+.table--mount-column caption, .table--mount-column th, .table--mount-column td {
   padding: 8px;
 }
 
@@ -91,6 +99,9 @@
   .table--mount-column {
     content: "mount-column";
     border: 1px solid #ddd;
+  }
+  .table--mount-column caption {
+    text-align: left;
   }
   .table--mount-column th, .table--mount-column td {
     white-space: nowrap;
