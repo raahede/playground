@@ -68,10 +68,7 @@
 
   tr:nth-child(even) { background: #eee; }
 
-  th, td {
-    padding: 8px;
-    line-height: 24px;
-  }
+  th, td { padding: 8px; }
 
   td:first-child {
     font-size: 0.8em;
@@ -87,10 +84,19 @@
   }
 
   @media (max-width: 767px) {
+    content: "mount-column"; // For use with javascript
     border: 1px solid #ddd;
 
     th, td {
       white-space: nowrap;
+      line-height: 24px;
+    }
+
+    &.is-active {
+      th, td {
+        white-space: normal;
+        line-height: inherit;
+      }
     }
 
     th:first-child {
