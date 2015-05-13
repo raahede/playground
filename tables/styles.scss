@@ -1,25 +1,19 @@
 
 .table--compare {
   border: 1px solid #ddd;
-  margin: 1em;
+  margin-bottom: 1em;
 
-  thead {
-    background: #ddd;
-  }
+  caption { border: inherit; }
+
+  thead { background: #ddd; }
 
   tr:nth-child(even) { background: #eee; }
 
-  th, td {
-    padding: 0.5em;
-  }
+  caption, th, td { padding: 0.5em; }
 
-  th {
-    text-align: left;
-  }
+  th { text-align: left; }
 
-  tbody th {
-    font-size: 0.8em;
-  }
+  tbody th { font-size: 0.8em; }
 
   @media (max-width: 479px) {
     thead { display: none; }
@@ -54,38 +48,34 @@
 }
 
 .table--mount-column {
-  margin: 1em;
+  margin-bottom: 1em;
   overflow: auto;
   border: 1px solid #ddd;
 
-  table {
-    width: 100%;
-  }
+  table { width: 100%; }
 
-  thead {
-    background: #ddd;
-  }
+  caption { border: inherit; }
+
+  thead { background: #ddd; }
 
   tr:nth-child(even) { background: #eee; }
 
-  th, td { padding: 8px; }
+  caption, th, td { padding: 8px; }
 
   td:first-child {
     font-size: 0.8em;
     font-weight: bold;
   }
 
-  th {
-    text-align: left;
-  }
+  th { text-align: left; }
 
-  tbody th {
-    font-size: 0.8em;
-  }
+  tbody th { font-size: 0.8em; }
 
   @media (max-width: 767px) {
     content: "mount-column"; // For use with javascript
     border: 1px solid #ddd;
+
+    caption { text-align: left; }
 
     th, td {
       white-space: nowrap;
