@@ -1,36 +1,36 @@
-.compare {
+.table--compare {
   border: 1px solid #ddd;
   margin: 1em;
 }
 
-.compare thead {
+.table--compare thead {
   background: #ddd;
 }
 
-.compare tr:nth-child(even) {
+.table--compare tr:nth-child(even) {
   background: #eee;
 }
 
-.compare th, .compare td {
+.table--compare th, .table--compare td {
   padding: 0.5em;
 }
 
-.compare th {
+.table--compare th {
   text-align: left;
 }
 
-.compare tbody th {
+.table--compare tbody th {
   font-size: 0.8em;
 }
 
 @media (max-width: 479px) {
-  .compare thead {
+  .table--compare thead {
     display: none;
   }
-  .compare tr:nth-child(even) {
+  .table--compare tr:nth-child(even) {
     background: none;
   }
-  .compare td, .compare th {
+  .table--compare td, .table--compare th {
     border-bottom: 1px solid #ddd;
     display: block;
     overflow: auto;
@@ -38,12 +38,12 @@
     float: left\9;
     width: 100%\9;
   }
-  .compare th {
+  .table--compare th {
     background: #ddd;
     font-weight: bold;
     text-align: left;
   }
-  .compare td:before {
+  .table--compare td:before {
     content: attr(title);
     display: inline-block;
     float: left;
@@ -52,71 +52,76 @@
   }
 }
 
-.mount-column {
+.table--mount-column {
   margin: 1em;
   overflow: auto;
   border: 1px solid #ddd;
 }
 
-.mount-column table {
+.table--mount-column table {
   width: 100%;
 }
 
-.mount-column thead {
+.table--mount-column thead {
   background: #ddd;
 }
 
-.mount-column tr:nth-child(even) {
+.table--mount-column tr:nth-child(even) {
   background: #eee;
 }
 
-.mount-column th, .mount-column td {
+.table--mount-column th, .table--mount-column td {
   padding: 8px;
-  line-height: 24px;
 }
 
-.mount-column td:first-child {
+.table--mount-column td:first-child {
   font-size: 0.8em;
   font-weight: bold;
 }
 
-.mount-column th {
+.table--mount-column th {
   text-align: left;
 }
 
-.mount-column tbody th {
+.table--mount-column tbody th {
   font-size: 0.8em;
 }
 
 @media (max-width: 767px) {
-  .mount-column {
+  .table--mount-column {
+    content: "mount-column";
     border: 1px solid #ddd;
   }
-  .mount-column th, .mount-column td {
+  .table--mount-column th, .table--mount-column td {
     white-space: nowrap;
+    line-height: 24px;
   }
-  .mount-column th:first-child {
+  .table--mount-column.is-active th, .table--mount-column.is-active td {
+    white-space: normal;
+    line-height: inherit;
+  }
+  .table--mount-column th:first-child {
     background: #ddd;
     border-right: 1px solid #ccc;
   }
-  .mount-column td:first-child {
+  .table--mount-column td:first-child {
     background: #fff;
     border-right: 1px solid #ddd;
   }
-  .mount-column tr:nth-child(even) td:first-child {
+  .table--mount-column tr:nth-child(even) td:first-child {
     background: #eee;
   }
-  .mount-column th:first-child,
-  .mount-column td:first-child {
+  .table--mount-column th:first-child,
+  .table--mount-column td:first-child {
     position: absolute;
     display: block;
     width: 100px;
     box-sizing: border-box;
   }
-  .mount-column th:first-child + th,
-  .mount-column th:first-child + td,
-  .mount-column td:first-child + th,
-  .mount-column td:first-child + td {
+  .table--mount-column th:first-child + th,
+  .table--mount-column th:first-child + td,
+  .table--mount-column td:first-child + th,
+  .table--mount-column td:first-child + td {
     padding-left: 110px;
   }
 }
