@@ -97,16 +97,21 @@
     }
 
     th:first-child {
+      background: #ddd;
       background: rgba(#ddd, 0.95);
       border-right: 1px solid #ccc;
     }
 
     td:first-child {
+      background: #fff;
       background: rgba(#fff, 0.95);
       border-right: 1px solid #ddd;
     }
 
-    tr:nth-child(even) td:first-child { background: rgba(#eee, 0.95); }
+    tr:nth-child(even) td:first-child {
+      background: #eee;
+      background: rgba(#eee, 0.95);
+    }
 
     th:first-child,
     td:first-child {
