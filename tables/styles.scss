@@ -97,28 +97,28 @@
     }
 
     th:first-child {
-      background: #ddd;
+      background: rgba(#ddd, 0.95);
       border-right: 1px solid #ccc;
     }
 
     td:first-child {
-      background: #fff;
+      background: rgba(#fff, 0.95);
       border-right: 1px solid #ddd;
     }
 
-    tr:nth-child(even) td:first-child { background: #eee; }
+    tr:nth-child(even) td:first-child { background: rgba(#eee, 0.95); }
 
     th:first-child,
     td:first-child {
-      position: absolute;
-      display: block;
-      width: 100px;
       box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      text-overflow: ellipsis;
+      width: 150px;
 
       + th,
-      + td {
-        padding-left: 110px;
-      }
+      + td { padding-left: 160px; }
     }
   }
 }
