@@ -122,26 +122,31 @@
   }
   .table--mount-column th:first-child {
     background: #ddd;
+    background: rgba(221, 221, 221, 0.95);
     border-right: 1px solid #ccc;
   }
   .table--mount-column td:first-child {
     background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     border-right: 1px solid #ddd;
   }
   .table--mount-column tr:nth-child(even) td:first-child {
     background: #eee;
+    background: rgba(238, 238, 238, 0.95);
   }
   .table--mount-column th:first-child,
   .table--mount-column td:first-child {
-    position: absolute;
-    display: block;
-    width: 100px;
     box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    width: 150px;
   }
   .table--mount-column th:first-child + th,
   .table--mount-column th:first-child + td,
   .table--mount-column td:first-child + th,
   .table--mount-column td:first-child + td {
-    padding-left: 110px;
+    padding-left: 160px;
   }
 }
