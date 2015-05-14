@@ -21,8 +21,8 @@ gulp.task('sass', function () {
     }))
     // Catch any SCSS errors and prevent them from crashing gulp
     .on('error', function (error) {
-        console.error(error);
-        this.emit('end');
+      console.error(error);
+      this.emit('end');
     })
     // Prefix CSS3 properties for browsersupport
     .pipe($.autoprefixer({
