@@ -22,8 +22,8 @@ var StickyNav = (function($) {
     headroomObj = new Headroom($clone[0], {
       offset : _getNavOffset(),
     }).init();
-    $(window).on('redraw', $.proxy(_onWindowResize, this));
-    $(window).on('resize', $.proxy(_onWindowResize, this));
+    $(window).on('redraw', _onWindowResize);
+    $(window).on('resize', _onWindowResize);
   }
 
   function _getNavOffset() {
