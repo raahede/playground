@@ -1,0 +1,84 @@
+//
+// Grid settings
+//
+
+$grid-container-width : em(1260px); // Other popular sizes: | 1140px | 960px
+$grid-padding         : em(10px);
+$grid-gutter          : 10px;
+
+//
+// Breakpoint settings
+//
+
+$base-font-size: 16px;
+
+$breakpoints : (
+  xxsmall : (
+    query     : "(max-width: #{em(319px)})",
+    no-query  : false
+    ),
+  xsmall-down : (
+    query     : "(max-width: #{em(399px)})",
+    no-query  : false
+    ),
+  xsmall : (
+    query     : "(min-width: #{em(320px)})",
+    no-query  : true
+    ),
+  xsmall-only : (
+    query     : "(min-width: #{em(320px)}) and (max-width: #{em(399px)})",
+    no-query  : false
+    ),
+  small-down : (
+    query     : "(max-width: #{em(479px)})",
+    no-query  : false
+    ),
+  small : (
+    query     : "(min-width: #{em(400px)})",
+    no-query  : true
+    ),
+  small-only : (
+    query     : "(min-width: #{em(400px)}) and (max-width: #{em(479px)})",
+    no-query  : false
+    ),
+  medium-down : (
+    query     : "(max-width: #{em(767px)})",
+    no-query  : false
+    ),
+  medium : (
+    query     : "(min-width: #{em(480px)})",
+    no-query  : true
+    ),
+  medium-only : (
+    query     : "(min-width: #{em(480px)}) and (max-width: #{em(767px)})",
+    no-query  : false
+    ),
+  large-down : (
+    query     : "(max-width: #{em(999px)})",
+    no-query  : false
+    ),
+  large : (
+    query     : "(min-width: #{em(768px)})",
+    no-query  : true
+    ),
+  large-only : (
+    query     : "(min-width: #{em(768px)}) and (max-width: #{em(999px)})",
+    no-query  : false
+    ),
+  xlarge-down : (
+    query     : "(max-width: #{em(1280px)})",
+    no-query  : false
+    ),
+  xlarge : (
+    query     : "(min-width: #{em(1000px)})",
+    no-query  : true
+    ),
+  xlarge-only : (
+    query     : "(min-width: #{em(1000px)}) and (max-width: #{em(1280px)})",
+    no-query  : true
+    ),
+  xxlarge : (
+    query     : "(min-width: #{em(1281px)})",
+    no-query  : false
+    )
+);
