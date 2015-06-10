@@ -1,0 +1,45 @@
+$grid-container-width : 960px !default;
+$grid-gutter          : 20px !default;
+$grid-padding         : $grid-gutter / 2 !default;
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after { clear: both; }
+  // For IE 6/7 only
+  *zoom: 1;
+}
+
+@mixin container($max-width: $grid-container-width) {
+  @include clearfix;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin gutter($gutter: $grid-gutter, $context: false) {
+  // Allow gutter value to be e.g. 20px or 1/4 = 25%
+  @if unitless($gutter) {
+    $gutter: percentage($gutter);
+    // By dividing with number of columns, the gutter is kept
+    // relative to the grid width
+    @if $context {
+      $gutter: $gutter / $context;
+    }
+  }
+  box-sizing: border-box;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+@mixin span($width, $direction : left) {
+  // Allow value to be e.g. 200px or 1/4 = 25%
+  @if unitless($width) {
+    $width: percentage($width);
+  }
+  float: $direction;
+  width: $width;
+}
