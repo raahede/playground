@@ -1,0 +1,62 @@
+
+$base-font-size: 16px !default;
+$breakpoints: () !default;
+$breakpoint-no-queries: false !default;
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function em( $px, $base: $base-font-size ) {
+  @if type-of( $px ) == "list" {
+    $output: ();
+    @each $value in $px {
+      $output: append($output, em( $value, $base ));
+    }
+    @return $output;
+  } @else {
+    @return strip-units($px) / strip-units($base) * 1em;
+  }
+}
+
+@function get-breakpoint-value($layout-map, $property) {
+  @if map-has-key($layout-map, $property) {
+    @return map-get($layout-map, $property);
+  } @else {
+    @return false;
+  }
+}
+
+@function get-breakpoint($name, $property: false) {
+  $return-value: ();
+  @if map-has-key($breakpoints, $name) {
+    $layout: map-get($breakpoints, $name);
+    @if $property {
+      $return-value: get-breakpoint-value($layout, $property);
+    } @else {
+      $return-value: $layout;
+    }
+  } @else {
+    @warn "The breakpoint '#{$name}' doesn't exist in $breakpoints.";
+  }
+  @return $return-value;
+}
+
+@mixin breakpoint($name, $no-query: false) {
+  $settings: get-breakpoint($name);
+  $query: get-breakpoint-value($settings, query);
+  @if not $no-query {
+    $no-query: get-breakpoint-value($settings, no-query);
+  }
+  @if $query {
+    @if not $breakpoint-no-queries and not $no-query {
+      @media #{ $query } {
+        @content;
+      }
+    } @else if $breakpoint-no-queries and $no-query {
+      @content;
+    }
+  } @else {
+    @warn "The breakpoint '#{$name}' has no query set and will not output anything.";
+  }
+}
