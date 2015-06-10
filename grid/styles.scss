@@ -8,6 +8,8 @@
 
 body {
   font-size: $base-font-size;
+  margin: 2em 0;
+  padding: 0;
 }
 
 /**
@@ -22,11 +24,82 @@ body {
   }
 }
 
+/**
+ * Grid container
+ */
+
 .container {
   @include container;
 }
 
-.column-gutter {
+.container--no-gutter {
+  @extend .container;
   @include gutter;
+}
+
+/**
+ * Grid columns
+ */
+
+.column--small {
   @include span(1);
+
+  @include breakpoint(small) {
+    @include span(1/2);
+  }
+
+  @include breakpoint(large) {
+    @include span(1/4);
+  }
+}
+
+.column--large {
+  @include span(1);
+
+  @include breakpoint(large) {
+    @include span(1/2);
+  }
+}
+
+/**
+ * Column layouts / styles
+ */
+
+// Element with gutter
+.column--has-gutter {
+  margin-bottom: gutter() * 2;
+  @include gutter;
+}
+
+// Element without gutter
+.column--no-gutter {
+  background-color: #D5EAF0;
+  margin-bottom: gutter() * 2;
+
+  img { width: 100%; }
+
+  p {
+    margin: gutter();
+  }
+}
+
+// Element with border to the left for wrapping
+// columns with border - this avoids double border between columns
+.border-wrapper {
+  @include clearfix;
+  border-left: 1px solid #ccc;
+}
+
+.column--border {
+  border: 1px solid #ccc;
+  border-left: none;
+  margin-top: -1px;
+  padding: gutter();
+  @include gutter;
+
+  @include breakpoint(large) {
+    min-height: 344px;
+  }
+
+  img { width: 100%; }
 }
