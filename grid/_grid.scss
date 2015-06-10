@@ -1,6 +1,5 @@
-$grid-container-width : 960px !default;
-$grid-gutter          : 20px !default;
-$grid-padding         : $grid-gutter / 2 !default;
+$container-width : 960px !default;
+$gutter          : 20px !default;
 
 @mixin clearfix {
   &:before,
@@ -13,14 +12,14 @@ $grid-padding         : $grid-gutter / 2 !default;
   *zoom: 1;
 }
 
-@mixin container($max-width: $grid-container-width) {
+@mixin container($max-width: $container-width) {
   @include clearfix;
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
 }
 
-@mixin gutter($gutter: $grid-gutter, $context: false) {
+@function gutter($gutter: $gutter, $context: false) {
   // Allow gutter value to be e.g. 20px or 1/4 = 25%
   @if unitless($gutter) {
     $gutter: percentage($gutter);
@@ -30,6 +29,11 @@ $grid-padding         : $grid-gutter / 2 !default;
       $gutter: $gutter / $context;
     }
   }
+  @return $gutter / 2;
+}
+
+@mixin gutter($gutter: $gutter, $context: false) {
+  $gutter: gutter($gutter, $context);
   box-sizing: border-box;
   padding-left: $gutter;
   padding-right: $gutter;
