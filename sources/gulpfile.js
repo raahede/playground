@@ -14,10 +14,11 @@ gulp.task('sass', function () {
     .src(['sass/**/*.scss', '../*/*.scss'])
     // Initiate sourcemaps
     // Convert sass into css
+    .pipe($.sass({errLogToConsole: true}))
     .pipe($.sass({
-      // sourcemap: true,
-      outputStyle: 'expanded',
-      errLogToConsole: true
+      // errLogToConsole: true,
+      // sourceComments: 'normal',
+      outputStyle: 'expanded'
     }))
     // Catch any SCSS errors and prevent them from crashing gulp
     .on('error', function (error) {
