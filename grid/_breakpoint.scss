@@ -49,7 +49,7 @@ $breakpoint-no-queries: false !default;
     $no-query: get-breakpoint-value($settings, no-query);
   }
   @if $query {
-    @if not $breakpoint-no-queries and not $no-query {
+    @if not $breakpoint-no-queries {
       @media #{ $query } {
         @content;
       }
