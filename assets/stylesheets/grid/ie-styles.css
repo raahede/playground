@@ -1,0 +1,58 @@
+/**
+ * General settings
+ */
+body {
+  font-size: 16px;
+}
+
+/**
+ * All media queries
+ */
+.xsmall {
+  content: "xsmall";
+}
+
+.small {
+  content: "small";
+}
+
+.medium {
+  content: "medium";
+}
+
+.large {
+  content: "large";
+}
+
+.xlarge {
+  content: "xlarge";
+}
+
+.xlarge-only {
+  content: "xlarge-only";
+}
+
+.container {
+  *zoom: 1;
+  max-width: 78.75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
+.column-gutter {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  width: 100%;
+}

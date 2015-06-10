@@ -1,0 +1,100 @@
+/**
+ * General settings
+ */
+body {
+  font-size: 16px;
+}
+
+/**
+ * All media queries
+ */
+@media (max-width: 19.9375em) {
+  .xxsmall {
+    content: "xxsmall";
+  }
+}
+
+@media (max-width: 24.9375em) {
+  .xsmall-down {
+    content: "xsmall-down";
+  }
+}
+
+@media (min-width: 20em) and (max-width: 24.9375em) {
+  .xsmall-only {
+    content: "xsmall-only";
+  }
+}
+
+@media (max-width: 29.9375em) {
+  .small-down {
+    content: "small-down";
+  }
+}
+
+@media (min-width: 25em) and (max-width: 29.9375em) {
+  .small-only {
+    content: "small-only";
+  }
+}
+
+@media (max-width: 47.9375em) {
+  .medium-down {
+    content: "medium-down";
+  }
+}
+
+@media (min-width: 30em) and (max-width: 47.9375em) {
+  .medium-only {
+    content: "medium-only";
+  }
+}
+
+@media (max-width: 62.4375em) {
+  .large-down {
+    content: "large-down";
+  }
+}
+
+@media (min-width: 48em) and (max-width: 62.4375em) {
+  .large-only {
+    content: "large-only";
+  }
+}
+
+@media (max-width: 80em) {
+  .xlarge-down {
+    content: "xlarge-down";
+  }
+}
+
+@media (min-width: 80.0625em) {
+  .xxlarge {
+    content: "xxlarge";
+  }
+}
+
+.container {
+  *zoom: 1;
+  max-width: 78.75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
+.column-gutter {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  width: 100%;
+}

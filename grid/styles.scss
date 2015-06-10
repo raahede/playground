@@ -1,0 +1,32 @@
+@import "breakpoint";
+@import "grid";
+@import "settings";
+
+/**
+ * General settings
+ */
+
+body {
+  font-size: $base-font-size;
+}
+
+/**
+ * All media queries
+ */
+
+@each $name, $values in $breakpoints {
+  .#{$name} {
+    @include breakpoint($name) {
+      content: "#{$name}";
+    }
+  }
+}
+
+.container {
+  @include container;
+}
+
+.column-gutter {
+  @include gutter;
+  @include span(1);
+}
