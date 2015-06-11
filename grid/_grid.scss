@@ -39,7 +39,7 @@ $gutter          : 20px !default;
   padding-right: $gutter;
 }
 
-@mixin span($width, $direction : left) {
+@mixin span($width: 100%, $direction : left) {
   // Allow value to be e.g. 200px or 1/4 = 25%
   @if unitless($width) {
     $width: percentage($width);
