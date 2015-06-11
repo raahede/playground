@@ -138,7 +138,7 @@ body {
   @include gutter;
 
   @include breakpoint(large) {
-    min-height: 344px;
+    min-height: 354px;
   }
 
   img { width: 100%; }
