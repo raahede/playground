@@ -29,14 +29,14 @@ $gutter          : 20px !default;
       $gutter: $gutter / $context;
     }
   }
-  @return $gutter / 2;
+  @return $gutter;
 }
 
 @mixin gutter($gutter: $gutter, $context: false) {
   $gutter: gutter($gutter, $context);
   box-sizing: border-box;
-  padding-left: $gutter;
-  padding-right: $gutter;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
 }
 
 @mixin span($width: 100%, $direction : left) {

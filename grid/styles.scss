@@ -97,7 +97,7 @@ body {
 //
 
 .column--has-gutter {
-  margin-bottom: gutter() * 2;
+  margin-bottom: gutter();
   @include gutter;
 }
 
@@ -107,12 +107,12 @@ body {
 
 .column--no-gutter {
   background-color: #D5EAF0;
-  margin-bottom: gutter() * 2;
+  margin-bottom: gutter();
 
   img { width: 100%; }
 
   p {
-    margin: gutter();
+    margin: gutter() / 2;
   }
 }
 
@@ -134,7 +134,7 @@ body {
   border: 1px solid #ccc;
   border-left: none;
   margin-top: -1px;
-  padding: gutter();
+  padding: gutter() / 2;
   @include gutter;
 
   @include breakpoint(large) {
