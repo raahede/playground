@@ -26,6 +26,8 @@ body {
 
 /**
  * Grid container
+ * ---
+ * Element for setting max-width on layout
  */
 
 .container {
@@ -38,7 +40,30 @@ body {
 }
 
 /**
+ * Grid row splitter
+ * ---
+ * Element for securing that floated element's won't clash
+ * when they differ in height
+ */
+
+%splitter {
+  border: none;
+  display: none;
+  margin: 0;
+  @include span;
+}
+
+.splitter--large {
+  @extend %splitter;
+  @include breakpoint(large) {
+    display: block;
+  }
+}
+
+/**
  * Grid columns
+ * ---
+ * Setting widths on elements on different breakpoints
  */
 
 .column--small {
@@ -63,15 +88,23 @@ body {
 
 /**
  * Column layouts / styles
+ * ---
+ * Showcasing different element styles
  */
 
+//
 // Element with gutter
+//
+
 .column--has-gutter {
   margin-bottom: gutter() * 2;
   @include gutter;
 }
 
+//
 // Element without gutter
+//
+
 .column--no-gutter {
   background-color: #D5EAF0;
   margin-bottom: gutter() * 2;
@@ -83,13 +116,20 @@ body {
   }
 }
 
-// Element with border to the left for wrapping
-// columns with border - this avoids double border between columns
+
+//
+// Element with border and inside gutter
+//
+
+// Wrapping element with border to the left for wrapping columns
+// with border - this avoids double border between columns
 .border-wrapper {
-  @include clearfix;
   border-left: 1px solid #ccc;
+  @include clearfix;
 }
 
+// Element with border
+// Negative margin is set to avoid vertical double borders
 .column--border {
   border: 1px solid #ccc;
   border-left: none;
