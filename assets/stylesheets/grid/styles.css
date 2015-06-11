@@ -114,6 +114,8 @@ body {
 
 /**
  * Grid container
+ * ---
+ * Element for setting max-width on layout
  */
 .container, .container--no-gutter {
   *zoom: 1;
@@ -140,7 +142,29 @@ body {
 }
 
 /**
+ * Grid row splitter
+ * ---
+ * Element for securing that floated element's won't clash
+ * when they differ in height
+ */
+.splitter--large {
+  border: none;
+  display: none;
+  margin: 0;
+  float: left;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  .splitter--large {
+    display: block;
+  }
+}
+
+/**
  * Grid columns
+ * ---
+ * Setting widths on elements on different breakpoints
  */
 .column--small {
   float: left;
@@ -175,6 +199,8 @@ body {
 
 /**
  * Column layouts / styles
+ * ---
+ * Showcasing different element styles
  */
 .column--has-gutter {
   margin-bottom: 20px;
@@ -197,8 +223,8 @@ body {
 }
 
 .border-wrapper {
-  *zoom: 1;
   border-left: 1px solid #ccc;
+  *zoom: 1;
 }
 
 .border-wrapper:before,
